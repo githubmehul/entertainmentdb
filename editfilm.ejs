@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+  @-ms-viewport{
+  width: device-width;
+}
+</style>
+<body>
+      <div class="container" align=center>
+    <u><h2>Edit Film Record</h2></u><br>
+    <!-- Saving the New Records in Actors Table -->
+    <form  method="post">
+        <!-- <div class="form-group">
+            <label for="film_id">Enter Film ID:</label>
+            <input type="number" class="form-control" placeholder="Enter Film ID:" name="film_id">
+          </div> -->
+      <div class="form-group">
+        <label for="title">Enter Title:</label>
+        <input type="text" class="form-control" placeholder="Enter Title:" name="title" value="<%= film.title %> ">
+      </div>
+      <div class="form-group">
+        <label for="description">Enter Description:</label>
+        <input type="text" class="form-control" placeholder="Enter Description:" name="description"value="<%= film.description %> ">
+      </div>
+      <div class="form-group">
+        <label for="release_year">Enter Release Year:</label>
+        <input type="number" class="form-control" placeholder="Enter Release Year" name="release_year" value="<%= film.release_year %> ">
+      </div>
+      <div class="form-group">
+        <label for="language_id">Enter Language_ID:</label>
+        <input type="number" class="form-control" placeholder="Enter Language ID" name="language_id" value="<%= film.language_id %> ">
+     </div>
+     <br>
+     <h6 align = "center">Select the Language ID that corresponds to the Film <br>Enter the Selected Value in the Language ID Input Box</h6>
+     <select id="country_id"class="custom-select" style="width:200px;" style = "padding-left: 30%;">
+      <option>	1	</option>
+  <option>	2	</option>
+  <option>	3	</option>
+  <option>	4	</option>
+  <option>	5	</option>
+  <option>	6	</option>
+     </select>
+     <br>
+     <br>
+     <div class="form-group">
+        <label for="original_language_id">Enter Original Language_ID:</label>
+        <input type="number" class="form-control" placeholder="Enter Original Language ID" name="original_language_id" value="<%= film.original_language_id %> ">
+     </div>
+      <div class="form-group">
+        <label for="rental_duration">Enter Rental Duration:</label>
+        <input type="number" class="form-control" placeholder="Enter Rental Duration" name="rental_duration"value="<%= film.rental_duration %> " >
+      </div>
+      <div class="form-group">
+        <label for="rental_rate">Enter Rental Rate:</label>
+        <input type="number" step=0.01  class="form-control" placeholder="Enter Rental Rate" name="rental_rate" value="<%= film.rental_rate %> ">
+      </div>
+      <div class="form-group">
+        <label for="length">Enter Length:</label>
+        <input type="number" class="form-control" placeholder="Enter Length" name="length" value="<%= film.length %> ">
+      </div>
+      <div class="form-group">
+        <label for="replacement_cost">Enter Replacement Cost:</label>
+        <input type="number" step=0.01 class="form-control" placeholder="Enter Replacement Cost" name="replacement_cost" value="<%= film.replacement_cost %> ">
+      </div>
+      <div class="form-group">
+        <label for="rating">Enter Rating:</label>
+        <input type="text" class="form-control" placeholder="Enter Rating" name="rating" value="<%= film.rating %> ">
+      </div>
+      <div class="form-group">
+        <label for="special_features">Enter Special Features:</label>
+        <input type="text" class="form-control" placeholder="Enter Special Features" name="special_features" value="<%= film.special_features %> ">
+      </div>
+      <div class="form-group">
+        <label for="last_update">Enter Last Update:</label>
+        <input type="datetime-local" class="form-control" placeholder="Enter Last Update" name="last_update" value="<%= film.last_update %> ">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit!</button>
+    </form>
+  </div>
+</body>
+</html>

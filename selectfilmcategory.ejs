@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="view port" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    @-ms-viewport{
+  width: device-width;
+}
+    .center_button {
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+        justify-content: center;
+      align-items: center;
+      padding : 30%;
+    }
+    .right-button{
+        align-items: right;
+    }
+    .heading{
+        margin: auto;
+  width: 35%;
+  padding: 35px;
+    }
+    </style>
+<body>
+    <div class ="heading">
+       <u><h1 >Film Category Table</h1></u> 
+    </div>
+        <div class="container" align = center>
+         <!-- AddActor Reference in Actor Table -->
+        <div class = "right-button">
+        <a href="/openmenu" class="btn btn-primary">Go Back to Main Menu</a><br/><br/>
+        </div>
+        <div class = "center_button">
+            <a href="/addfilmcat" class="btn btn-primary">Add Film Category Record</a><br/><br/>
+        </div>
+                <table class="table table-dark table-hover">
+                        <thead>
+                                <tr>
+                                       <th>Film ID</th> 
+                                       <th>Category ID</th>
+                                        <th>Last Update</th>
+                                        <th>Action</th>
+                                    </tr>
+                            </thead>
+                        <tbody>
+                <!-- Call Function for Each Element in the Table -->
+                <% film_category.forEach(function(filmcat){ %>
+                <tr>
+                    <td><%= filmcat.film_id %></td>
+                    <td><%= filmcat.category_id %></td>
+                    <td><%= filmcat.last_update %></td>
+                    <td>
+                        <!-- Edit and Delete Statements -->
+                        <a href="/editfilmcat?category_id=<%= filmcat.category_id %>"class="btn btn-primary">Edit</a>
+                        <a href="/deletefilmcat?category_id=<%= filmcat.category_id %>" onClick="return confirm('Are you Sure!')"class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <% }); %>
+
+             </tbody>
+        </table>
+            
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.container{
+  background-color:rgb(156, 236, 156);
+}
+</style>
+<body>
+      <div class="container" align=center>
+    <u><h2>Add Language Record</h2></u><br>
+    <!-- Saving the New Records in Actors Table -->
+    <form  method="post">
+      <div class="form-group">
+        <label for="name">Enter Language Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Language Name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="last_update">Enter the Last Update:</label>
+        <input type="datetime-local" class="form-control" placeholder="Enter Last Update" name="last_update" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit!</button>
+    </form>
+  </div>
+</body>
+
+</html>

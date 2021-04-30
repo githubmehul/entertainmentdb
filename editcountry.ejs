@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+      <div class="container" align=center>
+    <u><h2>Edit Country Record</h2><br></u>
+    <form  method="post">
+      <div class="form-group">
+        <label for="country">Enter Country Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Country Name" name="country" value ="<%= country.country %>" required>
+      </div>
+      <div class="form-group">
+        <label for="last_update">Enter Last Update</label>
+        <input type="datetime-local" class="form-control" placeholder="Enter Last Update" name="last_update" value ="<%= country.last_update %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit!</button>
+      <input type ="hidden" value="<%= country.country_id %> ">
+    </form>
+  </div>
+</body>
+
+</html>

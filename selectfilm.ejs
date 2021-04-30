@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="view port" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    @-ms-viewport{
+  width: device-width;
+}
+    .center_button {
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+        justify-content: center;
+      align-items: center;
+      padding : 30%;
+    }
+    .right-button{
+        align-items: right;
+    }
+    .heading{
+        margin: auto;
+  width: 26%;
+  padding: 10px;
+    }
+    </style>
+<body>
+    <div class ="heading">
+        <u><h1 align = "center">Film Table</h1></u>
+    </div>
+        <div class="container" align = center>
+         <!-- AddActor Reference in Actor Table -->
+        <div class = "right-button">
+        <a href="/openmenu" class="btn btn-primary">Go Back to Main Menu</a><br/><br/>
+        </div>
+        <div class = "center_button">
+            <a href="/addfilm" class="btn btn-primary">Add Film Record</a><br/><br/>
+        </div>
+                <table class="table table-dark table-hover">
+                        <thead>
+                                <tr>
+                                       <th>Film ID</th> 
+                                       <th>Title</th>
+                                       <th>Description</th>
+                                        <th>Release Year</th>
+                                        <th>Language ID</th>
+                                        <th>Original Language ID</th>
+                                        <th>Rental Duration</th>
+                                        <th>Rental Rate</th>
+                                        <th>Length</th>
+                                        <th>Replacement Cost</th>
+                                        <th>Rating</th>
+                                        <th>Special Features</th>
+                                        <th>Last Update</th>
+                                        <th>Action</th>
+                                    </tr>
+                            </thead>
+                        <tbody>
+                <!-- Call Function for Each Element in the Table -->
+                <% film.forEach(function(fil){ %>
+                <tr>
+                    <td><%= fil.film_id %></td>
+                    <td><%= fil.title %></td>
+                    <td><%= fil.description %></td>
+                    <td><%= fil.release_year %></td>
+                    <td><%= fil.language_id %></td>
+                    <td><%= fil.original_language_id %></td>
+                    <td><%= fil.rental_duration %></td>
+                    <td><%= fil.rental_rate %></td>
+                    <td><%= fil.length %></td>
+                    <td><%= fil.replacement_cost %></td>
+                    <td><%= fil.rating %></td>
+                    <td><%= fil.special_features %></td>
+                    <td><%= fil.last_update %></td>
+                    <td>
+                        <!-- Edit and Delete Statements -->
+                        <a href="/editfil?film_id=<%= fil.film_id %>"class="btn btn-primary">Edit</a>
+                        <a href="/deletefil?film_id=<%= fil.film_id %>" onClick="return confirm('Are you Sure!')"class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                <% }); %>
+
+             </tbody>
+        </table>
+            
+    </div>
+</body>
+
+</html>
